@@ -12,6 +12,7 @@ body { margin: 0; min-width: 320px; }
 button, input { font: inherit; }
 a { color: inherit; text-decoration: none; }
 button { color: inherit; }
+button:focus-visible, input:focus-visible { outline: 3px solid #f28c00; outline-offset: 3px; }
 
 .site-header { position: relative; z-index: 10; display: grid; justify-items: center; min-height: 148px; padding: 20px 24px 0; background: #fff; }
 .brand { border: 0; padding: 0; background: transparent; cursor: pointer; }
@@ -56,4 +57,8 @@ button { color: inherit; }
   .main-nav > li:hover .sub-nav, .main-nav > li:focus-within .sub-nav { display: none; }
   .section-inner { width: min(100% - 32px, 1200px); }.hero-carousel { min-height: 330px; height: 62vw; }.hero-copy p { max-width: 260px; line-height: 1.6; }.carousel-control { width: 38px; height: 48px; }.carousel-control.previous { left: 8px; }.carousel-control.next { right: 8px; }.intro { grid-template-columns: 1fr; gap: 28px; padding: 58px 0; }.intro h2 { margin-bottom: 12px; }.services { padding: 8px 0; }.service-card { min-height: 330px; }.service-card > div { padding: 28px; }.products-section { grid-template-columns: 1fr; gap: 56px; padding: 62px 0; }.product-card > img { height: 250px; }
   .dog-hero { min-height: 240px; }.dog-content { padding: 40px 0 65px; }.category-tabs button { min-height: 55px; }.filter-panel { gap: 14px 20px; padding: 22px 18px; }.product-toolbar { display: block; margin: 40px 0 22px; }.product-toolbar p { margin-bottom: 18px; }.product-toolbar div { display: flex; overflow-x: auto; }.product-toolbar button { flex: 0 0 auto; }.dog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 10px; }.dog-card { padding: 6px; }.dog-card img { height: 150px; }.dog-card h2 { min-height: 45px; font-size: .87rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
