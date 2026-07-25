@@ -1,3 +1,5 @@
+import { asset } from '../utils/asset.js'
+
 const menus = [
   { label: "Molly's", items: ['소개', '오시는 길', '약속'] },
   { label: '서비스', items: ['미용 & 스파', '호텔 & 놀이터', '카페'] },
@@ -14,7 +16,7 @@ export function Header({ navigate }) {
   return (
     <header className="site-header">
       <button className="brand" onClick={() => navigate('/')} aria-label="몰리스 펫샵 홈">
-        <img src="/img/logo1.png" alt="몰리스 펫샵" />
+        <img src={asset('/img/logo1.png')} alt="몰리스 펫샵" />
       </button>
       <nav aria-label="주요 메뉴">
         <ul className="main-nav">

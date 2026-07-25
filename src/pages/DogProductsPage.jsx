@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { products } from '../data/products.js'
+import { asset } from '../utils/asset.js'
 
 const filters = ['전체보기', '퍼피', '어덜트', '시니어', '전연령', '유기농', '성견']
 const sortOptions = { sales: '판매량 순', recommended: '추천 순', high: '가격 높은 순', low: '가격 낮은 순' }
@@ -22,7 +23,7 @@ export function DogProductsPage() {
   const chooseFilter = (value) => { setFilter(value); setPage(1) }
 
   return <main className="dog-page">
-    <section className="dog-hero"><div><p>HOME &gt; 상품 &gt; <strong>강아지</strong></p><h1>강아지</h1></div></section>
+    <section className="dog-hero" style={{ backgroundImage: `linear-gradient(rgba(0,0,0,.38), rgba(0,0,0,.38)), url(${asset('/img_sub/ban2.jpg')})` }}><div><p>HOME &gt; 상품 &gt; <strong>강아지</strong></p><h1>강아지</h1></div></section>
     <section className="dog-content section-inner">
       <div className="category-tabs" aria-label="상품 카테고리"><button className="active">사료</button><button>간식</button><button>용품</button></div>
       <fieldset className="filter-panel"><legend>상품 필터</legend>{filters.map((item) => <label key={item}><input type="radio" name="life-stage" checked={filter === item} onChange={() => chooseFilter(item)} />{item}</label>)}</fieldset>
@@ -33,4 +34,4 @@ export function DogProductsPage() {
   </main>
 }
 
-function ProductCard({ product }) { return <article className="dog-card"><img src={product.image} alt={product.name} /><h2>{product.name}</h2><p className="price">{product.priceLabel} <del>{product.original}</del></p><p className="unit">({product.unit})</p><p className="rating" aria-label={`별점 5점, 리뷰 ${product.reviews}개`}>★★★★★ <span>({product.reviews})</span></p><span className="delivery">퀵배송</span></article> }
+function ProductCard({ product }) { return <article className="dog-card"><img src={asset(product.image)} alt={product.name} /><h2>{product.name}</h2><p className="price">{product.priceLabel} <del>{product.original}</del></p><p className="unit">({product.unit})</p><p className="rating" aria-label={`별점 5점, 리뷰 ${product.reviews}개`}>★★★★★ <span>({product.reviews})</span></p><span className="delivery">퀵배송</span></article> }
