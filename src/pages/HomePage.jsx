@@ -52,4 +52,4 @@ export function HomePage() {
 }
 
 function Service({ image, title, text }) { return <article className="service-card" style={{ backgroundImage: `url(${image})` }}><div><h2>{title}</h2><p>{text}</p></div></article> }
-function ProductShelf({ title, products }) { return <section className="product-shelf"><h2>{title}</h2><Carousel items={products} className="product-carousel" renderItem={(product) => <ProductCard product={product} />} /></section> }
+function ProductShelf({ title, products }) { return <section className="product-shelf"><h2>{title}</h2><Carousel items={products} autoPlay className="product-carousel" renderItem={(product) => <ProductCard product={product} />} /></section> }
