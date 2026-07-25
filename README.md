@@ -1,19 +1,36 @@
 # Molly's Pet Shop
 
-React와 Vite로 마이그레이션한 정적 쇼핑 페이지입니다.
+React와 Vite로 마이그레이션한 반려동물 쇼핑몰 퍼블리싱 프로젝트입니다.
 
-## 로컬 실행
+## 배포 사이트
 
-```bash
-npm install
-npm run dev
-```
+[Molly's Pet Shop 바로가기](https://hyeon924.github.io/mollys-pet-shop/)
 
-## GitHub Pages 배포 전 준비
+## 프로젝트 소개
 
-- Vite의 `base`는 이 저장소 이름에 맞춘 `/mollys-pet-shop/`입니다.
-- 상품 목록은 `/#/products/dogs` 해시 경로를 사용하므로 GitHub Pages 새로고침에서도 404가 발생하지 않습니다.
-- `npm run build`로 생성되는 `dist/`를 GitHub Pages 배포 대상으로 사용합니다.
-- `.nojekyll`이 빌드 산출물에 포함되어 Jekyll 처리를 막습니다.
+기존 정적 HTML·CSS·jQuery 페이지를 React 컴포넌트 구조로 재구성했습니다. 브랜드 컬러를 중심으로 메인 상품 탐색 흐름과 반려동물 상품 목록 경험을 구현했습니다.
 
-이 커밋에는 배포 워크플로가 포함되어 있지 않습니다. GitHub Pages 설정을 완료한 뒤에만 배포를 실행하세요.
+## 주요 기능
+
+- React 컴포넌트 기반의 메인·상품 목록 페이지
+- 메인 비주얼 및 추천·행사 제품 캐러셀
+- 강아지 상품 필터, 정렬, 페이지네이션
+- 반응형 레이아웃과 키보드 포커스·모션 감소 접근성 지원
+- GitHub Pages 자동 배포
+
+## 기술 스택
+
+- React
+- Vite
+- CSS
+- GitHub Actions
+- GitHub Pages
+
+## 화면 구성
+
+- 메인: 브랜드 소개, 서비스, 추천제품, 행사제품
+- 상품 목록: 강아지 사료 카테고리, 연령 필터, 정렬, 페이지네이션
+
+## 배포 방식
+
+`main` 브랜치에 변경 사항이 반영되면 GitHub Actions가 프로덕션 빌드를 생성하고 GitHub Pages에 배포합니다.
