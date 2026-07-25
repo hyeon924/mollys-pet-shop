@@ -6,7 +6,8 @@ import { HomePage } from './pages/HomePage.jsx'
 import { DogProductsPage } from './pages/DogProductsPage.jsx'
 
 function getPath() {
-  return window.location.pathname.replace(/\/+$/, '') || '/'
+  const hashPath = window.location.hash.replace(/^#/, '')
+  return hashPath.replace(/\/+$/, '') || '/'
 }
 
 export default function App() {
@@ -14,13 +15,13 @@ export default function App() {
 
   useEffect(() => {
     const onPopState = () => setPath(getPath())
-    window.addEventListener('popstate', onPopState)
-    return () => window.removeEventListener('popstate', onPopState)
+    window.addEventListener('hashchange', onPopState)
+    return () => window.removeEventListener('hashchange', onPopState)
   }, [])
 
   const navigate = (to) => {
     if (to !== path) {
-      window.history.pushState({}, '', to)
+      window.location.hash = to
       setPath(to)
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }

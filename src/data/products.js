@@ -13,6 +13,6 @@ export const products = rawProducts.map(([name, price, original, lifeStage, revi
   original: `${original}원`,
   lifeStage,
   reviews,
-  image: `/img_sub/pro${index + 1}.png`,
+  image: `img_sub/pro${index + 1}.png`,
   unit: index % 2 ? '10g당 290원' : '1kg당 17,500원',
 }))
